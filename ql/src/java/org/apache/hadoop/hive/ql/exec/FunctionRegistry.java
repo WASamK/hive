@@ -373,6 +373,7 @@ public final class FunctionRegistry {
     system.registerGenericUDF("ewah_bitmap_and", GenericUDFEWAHBitmapAnd.class);
     system.registerGenericUDF("ewah_bitmap_or", GenericUDFEWAHBitmapOr.class);
     system.registerGenericUDF("ewah_bitmap_empty", GenericUDFEWAHBitmapEmpty.class);
+    system.registerGenericUDF("ewah_bitmap_cardinality", GenericUDFEWAHBitmapCardinality.class);
 
     // Utility UDFs
     system.registerUDF("version", UDFVersion.class, false);
