@@ -78,7 +78,7 @@ public final class IndexUtils {
     PrunedPartitionList queryPartitionList = pctx.getOpToPartList().get(tableScan);
     Set<Partition> queryPartitions = queryPartitionList.getPartitions();
     if (queryPartitions == null || queryPartitions.isEmpty()) {
-      return null;
+      //return null;
     }
 
     for (Partition part : queryPartitions) {
