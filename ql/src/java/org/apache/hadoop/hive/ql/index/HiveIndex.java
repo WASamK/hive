@@ -17,6 +17,7 @@
  */
 package org.apache.hadoop.hive.ql.index;
 
+import org.apache.hadoop.hive.ql.index.BitSliced.BitSlicedIndexHandler;
 import org.apache.hadoop.hive.ql.index.Projection.ProjectionIndexHandler;
 import org.apache.hadoop.hive.ql.index.bitmap.BitmapIndexHandler;
 import org.apache.hadoop.hive.ql.index.compact.CompactIndexHandler;
@@ -36,7 +37,8 @@ public class HiveIndex {
     AGGREGATE_TABLE("aggregate",  AggregateIndexHandler.class.getName()),
     COMPACT_SUMMARY_TABLE("compact", CompactIndexHandler.class.getName()),
     BITMAP_TABLE("bitmap", BitmapIndexHandler.class.getName()),
-    PROJECTION_TABLE("projection",ProjectionIndexHandler.class.getName());
+    PROJECTION_TABLE("projection",ProjectionIndexHandler.class.getName()),
+    BITSLICED_TABLE("bitsliced", BitSlicedIndexHandler.class.getName());
 
     private IndexType(String indexType, String className) {
       indexTypeName = indexType;
