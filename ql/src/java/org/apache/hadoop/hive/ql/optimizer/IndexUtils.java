@@ -83,7 +83,7 @@ public final class IndexUtils {
 
     for (Partition part : queryPartitions) {
       if (!containsPartition(hive, part, indexes)) {
-        return null; // problem if it doesn't contain the partition
+        //return null; // problem if it doesn't contain the partition
       }
     }
 

@@ -102,7 +102,7 @@ public class IndexWhereProcessor implements NodeProcessor {
     try {
       queryPartitions = IndexUtils.checkPartitionsCoveredByIndex(operator, pctx, indexes);
       if (queryPartitions == null) { // partitions not covered
-        return null;
+        //return null;
       }
     } catch (HiveException e) {
       LOG.error("Fatal Error: problem accessing metastore", e);
