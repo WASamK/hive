@@ -24,13 +24,14 @@ import org.apache.hadoop.hive.ql.parse.ParseContext;
 import org.apache.hadoop.hive.ql.plan.ExprNodeDesc;
 import org.apache.hadoop.hive.ql.plan.PartitionDesc;
 import org.apache.hadoop.hive.ql.udf.generic.*;
+import org.apache.hadoop.hive.ql.udf.generic.GenericUDAFCollectSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.*;
 
 /**
- * Created by samadhik on 1/13/17.
+ * Created by samadhik on 1/2/17.
  */
 public class ProjectionIndexHandler extends TableBasedIndexHandler {
 
@@ -79,7 +80,7 @@ public class ProjectionIndexHandler extends TableBasedIndexHandler {
         BitmapQuery head = iqs.get(0);
         LOG.info("SAM head : "+head.toString());//WASam edit
         for ( i = 1; i < iqs.size(); i++) {
-            head = new BitmapOuterQuery("oind"+i, head, iqs.get(i));
+            head = new ProjectionOuterQuery("oind"+i, head, iqs.get(i));
             LOG.info("SAM iqs.get(i) : "+iqs.get(i).toString());//WASam edit
         }
         qlCommand.append(head.toString());
