@@ -1551,9 +1551,9 @@ public class HiveConf extends Configuration {
         "Whether to provide the row offset virtual column"),
 
     // Optimizer
-    HIVEOPTINDEXFILTER("hive.optimize.index.filter", false,
+    HIVEOPTINDEXFILTER("hive.optimize.index.filter", true,
         "Whether to enable automatic use of indexes"),
-    HIVEINDEXAUTOUPDATE("hive.optimize.index.autoupdate", false,
+    HIVEINDEXAUTOUPDATE("hive.optimize.index.autoupdate", true,
         "Whether to update stale indexes automatically"),
     HIVEOPTPPD("hive.optimize.ppd", true,
         "Whether to enable predicate pushdown"),
@@ -1661,7 +1661,7 @@ public class HiveConf extends Configuration {
         "before executing the main query block. -1 will disable this feature."),
 
     // Indexes
-    HIVEOPTINDEXFILTER_COMPACT_MINSIZE("hive.optimize.index.filter.compact.minsize", (long) 5 * 1024 * 1024 * 1024,
+    HIVEOPTINDEXFILTER_COMPACT_MINSIZE("hive.optimize.index.filter.compact.minsize", (long) 5 /** 1024 * 1024 * 1024*/,
         "Minimum size (in bytes) of the inputs on which a compact index is automatically used."), // 5G
     HIVEOPTINDEXFILTER_COMPACT_MAXSIZE("hive.optimize.index.filter.compact.maxsize", (long) -1,
         "Maximum size (in bytes) of the inputs on which a compact index is automatically used.  A negative number is equivalent to infinity."), // infinity
